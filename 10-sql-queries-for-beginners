@@ -1,0 +1,38 @@
+10 SQL Queries for Beginners
+
+-- 1. Select all records from a table
+SELECT * FROM employees;
+
+-- 2. Select specific columns
+SELECT employee_id, first_name, last_name FROM employees;
+
+-- 3. Filter rows with WHERE
+SELECT * FROM employees WHERE department = 'Finance';
+
+-- 4. Sorting results
+SELECT * FROM employees ORDER BY hire_date DESC;
+
+-- 5. Using AND/OR in filters
+SELECT * FROM employees WHERE department = 'Finance' AND salary > 60000;
+
+-- 6. Count the number of records
+SELECT COUNT(*) FROM employees;
+
+-- 7. Grouping and aggregate function
+SELECT department, AVG(salary) AS average_salary FROM employees GROUP BY department;
+
+-- 8. Filtering grouped results with HAVING
+SELECT department, AVG(salary) AS average_salary 
+FROM employees 
+GROUP BY department 
+HAVING AVG(salary) > 60000;
+
+-- 9. Joining two tables
+SELECT orders.order_id, customers.customer_name
+FROM orders
+JOIN customers ON orders.customer_id = customers.customer_id;
+
+-- 10. Updating records
+UPDATE employees
+SET job_title = 'Senior Analyst'
+WHERE employee_id = 5;
